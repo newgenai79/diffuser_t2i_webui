@@ -19,10 +19,8 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<h3 align='center'>CogView3-Plus</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus.jpg" width="800"/>
 	<br />
-	<br />
 	<h3 align='center'>Lumina</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina.jpg" width="800"/>
-	<br />
 	<br />
 	<h3 align='center'>Sana</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Sana.jpg" width="800"/>
