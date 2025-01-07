@@ -1,0 +1,17 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.5.1+cu124
+torchvision==0.20.1+cu124
+transformers>=4.47.1
+sentencepiece>=0.1.96
+huggingface-hub==0.25.2
+einops
+gguf
+opencv-python
+imageio
+imageio-ffmpeg
+gradio==5.9.1
+git+https://github.com/huggingface/diffusers
+torchao
+protobuf
+git+https://github.com/huggingface/accelerate
+bitsandbytes
