@@ -15,6 +15,10 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<a href='https://github.com/Alpha-VLLM/Lumina-T2X'><img src='https://img.shields.io/badge/Lumina-red'></a>
 </div>
 <hr />
+<p align="center">
+    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus.jpg" width="800"/>
+<p>
+<hr />
 <h3 align='center'>Installation steps</h3>
 
 <b>Step 1: Clone the repository</b>
