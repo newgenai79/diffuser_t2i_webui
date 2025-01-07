@@ -22,7 +22,13 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<br />
 	<b>Lumina</b>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina.jpg" width="800"/>
+	<br />
+	<br />
+	<b>Sana</b>
+    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Sana.jpg" width="800"/>
+
 <p>
+
 <hr />
 <h3 align='center'>Installation steps</h3>
 
