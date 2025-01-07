@@ -16,6 +16,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 </div>
 <hr />
 <p align="center">
+	<b>CogView3-Plus</b>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus.jpg" width="800"/>
 <p>
 <hr />
