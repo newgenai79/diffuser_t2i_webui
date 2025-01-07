@@ -14,7 +14,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<a href='https://github.com/ai-forever/Kandinsky-3'><img src='https://img.shields.io/badge/Kandinsky3-blue'></a>
 	<a href='https://github.com/Alpha-VLLM/Lumina-mGPT'><img src='https://img.shields.io/badge/Lumina-red'></a>
 </div>
-
+<hr />
 <h3 align='center'> Installation steps</h3>
 
 <b>Step 1: Clone the repository</b>
