@@ -61,7 +61,7 @@ python app.py
 	<li>Windows 11</li>
 	<li>Python 3.10.11</li>
 	<li>miniconda</li>
-	<li>Git</li>
-	<li>CUDA 12.6 (Cuda compilation tools, release 12.6, V12.6.77 - Build cuda_12.6.r12.6/compiler.34841621_0)</li>
-	<li>Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30157 for x64</li>
+	<li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+	<li><a href="https://developer.nvidia.com/cuda-downloads" target="_blank">CUDA 12.6</a> (Cuda compilation tools, release 12.6, V12.6.77 - Build cuda_12.6.r12.6/compiler.34841621_0)</li>
+	<li><a href="https://visualstudio.microsoft.com/vs/community/" target="_blank">Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30157 for x64</a></li>
 </ul>
