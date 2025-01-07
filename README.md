@@ -38,6 +38,7 @@ conda activate dt2i
 <b>Step 5: Install requirements</b>
 
 Windows ```pip install -r requirements.txt```
+<br>
 Linux ```pip3 install -r requirements.txt```
 
 	
