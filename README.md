@@ -12,3 +12,4 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<a href='https://github.com/ai-forever/Kandinsky-3'><img src='https://img.shields.io/badge/Kandinsky3-blue'></a>
 	<a href='https://github.com/Alpha-VLLM/Lumina-mGPT'><img src='https://img.shields.io/badge/Lumina-red'></a>
 </div>
+
