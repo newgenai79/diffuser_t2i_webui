@@ -3,7 +3,8 @@
 <div align='center'>
 Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Huggingface/Diffusers team</a>
 </div>
-<br>
+<br />
+<hr />
 <h2 align='center'>Supported models</h2>
 <div align='center'>
     <a href='https://github.com/NVlabs/Sana'><img src='https://img.shields.io/badge/Sana-blue'></a>
