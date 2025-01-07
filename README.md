@@ -18,6 +18,9 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 <p align="center">
 	<b>CogView3-Plus</b>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus.jpg" width="800"/>
+	<br />
+	<b>Lumina</b>
+    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina.jpg" width="800"/>
 <p>
 <hr />
 <h3 align='center'>Installation steps</h3>
