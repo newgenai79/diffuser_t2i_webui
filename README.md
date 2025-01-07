@@ -15,7 +15,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<a href='https://github.com/Alpha-VLLM/Lumina-mGPT'><img src='https://img.shields.io/badge/Lumina-red'></a>
 </div>
 <hr />
-<h3 align='center'> Installation steps (Tested only on Windows 11)</h3>
+<h3 align='center'>Installation steps</h3>
 
 <b>Step 1: Clone the repository</b>
 ```	
@@ -54,3 +54,9 @@ pip3 install -r requirements.txt
 ```	
 python app.py
 ```
+
+<hr />
+<h3 align='center'>Test environment</h3>
+<ul>
+	<li>Windows 11</li>
+	<li>Python 3.10.11</li>
