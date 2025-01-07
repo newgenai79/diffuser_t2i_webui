@@ -60,3 +60,6 @@ python app.py
 <ul>
 	<li>Windows 11</li>
 	<li>Python 3.10.11</li>
+	<li>CUDA 12.6 (Build cuda_12.6.r12.6/compiler.34841621_0)</li>
+	<li>Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30157 for x64</li>
+</ul>
