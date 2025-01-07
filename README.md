@@ -16,15 +16,15 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 </div>
 <hr />
 <p align="center">
-	<b>CogView3-Plus</b>
+	<h3>CogView3-Plus</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus.jpg" width="800"/>
 	<br />
 	<br />
-	<b>Lumina</b>
+	<h3>Lumina</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina.jpg" width="800"/>
 	<br />
 	<br />
-	<b>Sana</b>
+	<h3>Sana</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Sana.jpg" width="800"/>
 
 <p>
