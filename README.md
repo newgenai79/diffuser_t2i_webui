@@ -59,7 +59,7 @@ python app.py
 <h3 align='center'>Test environment</h3>
 <ul>
 	<li>Windows 11</li>
-	<li>Nvidia RTX 4060 8 GB Laptop GPU + 8 GB shared RAM + 45536 GB paging size</li>
+	<li>Nvidia RTX 4060 8 GB Laptop GPU + 8 GB shared RAM + 45536 GB Virtual memory / paging file size</li>
 	<li><a href="https://www.python.org/downloads/release/python-31011/" target="_blank">Python 3.10.11</a></li>
 	<li><a href="https://docs.anaconda.com/miniconda/" target="_blank">Miniconda</a></li>
 	<li><a href="https://git-scm.com/" target="_blank">Git</a></li>
