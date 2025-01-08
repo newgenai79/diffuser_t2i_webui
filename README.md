@@ -23,7 +23,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 	<h3 align='center'>HunyuanDiT</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/HunyuanDiT.jpg" width="800"/>
 	<h3 align='center'>Lumina</h3>
-    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina.jpg" width="800"/>
+    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Lumina1.jpg" width="800"/>
 
 
 <p>
