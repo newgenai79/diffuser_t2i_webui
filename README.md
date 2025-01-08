@@ -17,7 +17,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 <hr />
 <p align="center">
 	<h3 align='center'>Sana 2K</h3>
-    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Sana.jpg" width="800"/>
+    <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/Sana1.jpg" width="800"/>
 	<br />
 	<h3 align='center'>CogView3-Plus</h3>
     <img src="https://huggingface.co/datasets/newgenai79/Windows_wheels/resolve/main/img/CogView3Plus1.jpg" width="800"/>
