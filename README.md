@@ -30,7 +30,7 @@ Credits: <a href='https://github.com/huggingface/diffusers' target='_blank'>Hugg
 <p>
 
 <hr />
-<h3 align='center'>Installation steps</h3>
+<h3 align='center'>Installation guide</h3>
 
 <b>Step 1: Clone the repository</b>
 ```	
