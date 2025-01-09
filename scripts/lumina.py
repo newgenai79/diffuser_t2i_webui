@@ -1,3 +1,7 @@
+"""
+Copyright NewGenAI
+Do not remove this copyright. No derivative code allowed.
+"""
 import torch
 import os
 from diffusers import LuminaText2ImgPipeline

@@ -1,15 +1,19 @@
+"""
+Copyright NewGenAI
+Do not remove this copyright. No derivative code allowed.
+"""
 import torch
 import gradio as gr
 import numpy as np
 import os
 
 from sana2K import sana2KInference
-from sanaPAG2K import sanaPAG2KInference
 from cogView3Plus import CogView3PlusInference
 from hunyuanDIT import HunyuanDITInference
 from lumina import LuminaInference
 from kandinsky3 import Kandinsky3Inference
 from datetime import datetime
+
 
 MAX_SEED = np.iinfo(np.int32).max
 RESOLUTIONS_cogView3Plus = [
@@ -48,12 +52,9 @@ def random_seed():
     return torch.randint(0, MAX_SEED, (1,)).item()
 def generate_images(
     main_prompt, main_negative_prompt, seed,
-    sana2k_enable, sana2k_prompt, sana2k_negative_prompt,
-    sana2k_width, sana2k_height, sana2k_guidance_scale,
-    sana2k_num_inference_steps, sana2k_memory_optimization,
-    sanaPAG2k_enable, sanaPAG2k_prompt, sanaPAG2k_negative_prompt,
-    sanaPAG2k_width, sanaPAG2k_height, sanaPAG2k_guidance_scale,
-    sanaPAG2k_num_inference_steps, sanaPAG2k_memory_optimization,
+    sana_enable, sana_prompt, sana_negative_prompt,
+    sana_width, sana_height, sana_guidance_scale,
+    sana_num_inference_steps, sana_memory_optimization, sana_inference_type,
     cogView3Plus_enable, cogView3Plus_memory_optimization, cogView3Plus_prompt, 
     cogView3Plus_negative_prompt, cogView3Plus_resolution, 
     cogView3Plus_guidance_scale, cogView3Plus_num_inference_steps,
@@ -151,45 +152,28 @@ def generate_images(
         except Exception as e:
             print(f"Error generating CogView3 Plus image: {e}")
     
-    if sana2k_enable:
-        prompt = sana2k_prompt if sana2k_prompt.strip() else main_prompt
-        negative_prompt = sana2k_negative_prompt if sana2k_negative_prompt.strip() else main_negative_prompt
+    if sana_enable:
+        prompt = sana_prompt if sana_prompt.strip() else main_prompt
+        negative_prompt = sana_negative_prompt if sana_negative_prompt.strip() else main_negative_prompt
         
         try:
             image_path = sana2KInference(
                 prompt=prompt,
                 negative_prompt=negative_prompt,
-                width=sana2k_width,
-                height=sana2k_height,
-                guidance_scale=sana2k_guidance_scale,
-                num_inference_steps=sana2k_num_inference_steps,
+                width=sana_width,
+                height=sana_height,
+                guidance_scale=sana_guidance_scale,
+                num_inference_steps=sana_num_inference_steps,
                 seed=seed,
-                optimization_mode=sana2k_memory_optimization,
-                output_path=output_dir
+                optimization_mode=sana_memory_optimization,
+                output_path=output_dir,
+                inference_type=sana_inference_type,
             )
             generated_images.append((image_path, "Sana 2K"))
         except Exception as e:
-            print(f"Error generating Sana 2K image: {e}")
+            print(f"Error generating Sana image: {e}")
     
-    if sanaPAG2k_enable:
-        prompt = sanaPAG2k_prompt if sanaPAG2k_prompt.strip() else main_prompt
-        negative_prompt = sanaPAG2k_negative_prompt if sanaPAG2k_negative_prompt.strip() else main_negative_prompt
-        
-        try:
-            image_path = sanaPAG2KInference(
-                prompt=prompt,
-                negative_prompt=negative_prompt,
-                width=sanaPAG2k_width,
-                height=sanaPAG2k_height,
-                guidance_scale=sanaPAG2k_guidance_scale,
-                num_inference_steps=sanaPAG2k_num_inference_steps,
-                seed=seed,
-                optimization_mode=sanaPAG2k_memory_optimization,
-                output_path=output_dir
-            )
-            generated_images.append((image_path, "Sana PAG 2K"))
-        except Exception as e:
-            print(f"Error generating Sana PAG 2K image: {e}")
+
     print("Images generated: ", output_dir)
     return [(img_path, label) for img_path, label in generated_images]
 def create_multi_model_tab():
@@ -220,10 +204,16 @@ def create_multi_model_tab():
     )
 
     with gr.Tabs():
-        with gr.Tab("Sana 2K"):
+        with gr.Tab("Sana 2K / Sana PAG 2K / Sana 4K"):
             with gr.Row():
-                sana2k_enable = gr.Checkbox(label="Enable Sana 2K", value=False, interactive=True)
-                sana2k_memory_optimization = gr.Radio(
+                sana_enable = gr.Checkbox(label="Enable Sana", value=False, interactive=True)
+                sana_inference_type = gr.Radio(
+                    choices=["Sana 2K", "Sana PAG 2K", "Sana 4K"],
+                    label="Inference type",
+                    value="Sana 2K",
+                    interactive=True
+                )
+                sana_memory_optimization = gr.Radio(
                     choices=["No optimization", "Low VRAM"],
                     label="Memory Optimization",
                     value="Low VRAM",
@@ -231,13 +221,13 @@ def create_multi_model_tab():
                 )
             with gr.Row():
                 with gr.Column():
-                    sana2k_prompt_input = gr.Textbox(
+                    sana_prompt_input = gr.Textbox(
                         label="Prompt (Override)", 
                         placeholder="Leave empty to use main prompt", 
                         lines=3,
                         interactive=True
                     )
-                    sana2k_negative_prompt_input = gr.Textbox(
+                    sana_negative_prompt_input = gr.Textbox(
                         label="Negative Prompt (Override)",
                         placeholder="Leave empty to use main negative prompt",
                         lines=3,
@@ -245,23 +235,23 @@ def create_multi_model_tab():
                     )
                 with gr.Column():
                     with gr.Row():
-                        sana2k_width_input = gr.Number(
+                        sana_width_input = gr.Number(
                             label="Width", 
                             value=2048, 
                             minimum=512, 
-                            maximum=2048, 
+                            maximum=4096, 
                             step=64,
                             interactive=True
                         )
-                        sana2k_height_input = gr.Number(
+                        sana_height_input = gr.Number(
                             label="Height", 
                             value=2048, 
                             minimum=512, 
-                            maximum=2048, 
+                            maximum=4096, 
                             step=64,
                             interactive=True
                         )
-                    sana2k_guidance_scale_slider = gr.Slider(
+                    sana_guidance_scale_slider = gr.Slider(
                         label="Guidance Scale", 
                         minimum=1.0, 
                         maximum=20.0, 
@@ -269,66 +259,12 @@ def create_multi_model_tab():
                         step=0.1,
                         interactive=True
                     )
-                    sana2k_num_inference_steps_input = gr.Number(
+                    sana_num_inference_steps_input = gr.Number(
                         label="Number of Inference Steps", 
                         value=30,
                         interactive=True
                     )
 
-        with gr.Tab("Sana PAG 2K"):
-            with gr.Row():
-                sanaPAG2k_enable = gr.Checkbox(label="Enable Sana PAG 2K", value=False, interactive=True)
-                sanaPAG2k_memory_optimization = gr.Radio(
-                    choices=["No optimization", "Low VRAM"],
-                    label="Memory Optimization",
-                    value="Low VRAM",
-                    interactive=True
-                )
-            with gr.Row():
-                with gr.Column():
-                    sanaPAG2k_prompt_input = gr.Textbox(
-                        label="Prompt (Override)",
-                        placeholder="Leave empty to use main prompt",
-                        lines=3,
-                        interactive=True
-                    )
-                    sanaPAG2k_negative_prompt_input = gr.Textbox(
-                        label="Negative Prompt (Override)",
-                        placeholder="Leave empty to use main negative prompt",
-                        lines=3,
-                        interactive=True
-                    )
-                with gr.Column():
-                    with gr.Row():
-                        sanaPAG2k_width_input = gr.Number(
-                            label="Width", 
-                            value=2048, 
-                            minimum=512, 
-                            maximum=2048, 
-                            step=64,
-                            interactive=True
-                        )
-                        sanaPAG2k_height_input = gr.Number(
-                            label="Height", 
-                            value=2048, 
-                            minimum=512, 
-                            maximum=2048, 
-                            step=64,
-                            interactive=True
-                        )
-                    sanaPAG2k_guidance_scale_slider = gr.Slider(
-                        label="Guidance Scale", 
-                        minimum=1.0, 
-                        maximum=20.0, 
-                        value=7.0, 
-                        step=0.1,
-                        interactive=True
-                    )
-                    sanaPAG2k_num_inference_steps_input = gr.Number(
-                        label="Number of Inference Steps", 
-                        value=30,
-                        interactive=True
-                    )
         with gr.Tab("CogView 3 Plus"):
             with gr.Row():
                 cogView3Plus_enable = gr.Checkbox(label="Enable CogView3Plus", value=False, interactive=True)
@@ -526,12 +462,9 @@ def create_multi_model_tab():
         fn=generate_images,
         inputs=[
             prompt_input, negative_prompt_input, seed_input,
-            sana2k_enable, sana2k_prompt_input, sana2k_negative_prompt_input,
-            sana2k_width_input, sana2k_height_input, sana2k_guidance_scale_slider,
-            sana2k_num_inference_steps_input, sana2k_memory_optimization,
-            sanaPAG2k_enable, sanaPAG2k_prompt_input, sanaPAG2k_negative_prompt_input,
-            sanaPAG2k_width_input, sanaPAG2k_height_input, sanaPAG2k_guidance_scale_slider,
-            sanaPAG2k_num_inference_steps_input, sanaPAG2k_memory_optimization,
+            sana_enable, sana_prompt_input, sana_negative_prompt_input,
+            sana_width_input, sana_height_input, sana_guidance_scale_slider,
+            sana_num_inference_steps_input, sana_memory_optimization, sana_inference_type,
             cogView3Plus_enable, cogView3Plus_memory_optimization, cogView3Plus_prompt_input, 
             cogView3Plus_negative_prompt_input, cogView3Plus_resolution_dropdown, 
             cogView3Plus_guidance_scale_slider, cogView3Plus_num_inference_steps_input,

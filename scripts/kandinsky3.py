@@ -1,3 +1,7 @@
+"""
+Copyright NewGenAI
+Do not remove this copyright. No derivative code allowed.
+"""
 import torch
 import os
 from diffusers import  AutoPipelineForText2Image
@@ -14,7 +18,7 @@ def Kandinsky3Inference(prompt, negative_prompt, width, height, guidance_scale, 
         guidance_scale (float): The guidance scale for generation
         num_inference_steps (int): Number of inference steps
         seed (int): Random seed for reproducibility
-        optimization_mode (str): Memory optimization mode ("Normal" or "Low VRAM")
+        optimization_mode (str): Memory optimization mode ("Normal" or "Low VRAM" or "Extremely Low VRAM")
         output_path (str): Directory to save the generated image
         
     Returns:

@@ -1,3 +1,7 @@
+"""
+Copyright NewGenAI
+Do not remove this copyright. No derivative code allowed.
+"""
 import sys
 import os
 import gradio as gr
@@ -10,8 +14,6 @@ tabs_dir = os.path.join(current_dir, 'tabs')
 sys.path.append(tabs_dir)
 
 from tab1 import create_multi_model_tab
-
-multi_model_pipe = None
 
 with gr.Blocks() as demo:
     gr.Markdown("# Text 2 Image Generation")
