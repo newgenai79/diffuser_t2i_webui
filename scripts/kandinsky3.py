@@ -27,7 +27,7 @@ def Kandinsky3Inference(prompt, negative_prompt, width, height, guidance_scale, 
     pipe =  AutoPipelineForText2Image.from_pretrained(
         "kandinsky-community/kandinsky-3",
         variant="fp16", 
-        torch_dtype=torch.float16
+        torch_dtype=torch.float16,
     )
     # pipe.to("cuda")
     

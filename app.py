@@ -14,11 +14,14 @@ tabs_dir = os.path.join(current_dir, 'tabs')
 sys.path.append(tabs_dir)
 
 from tab1 import create_multi_model_tab
+from tab_sana import create_sana_tab
 
 with gr.Blocks() as demo:
     gr.Markdown("# Text 2 Image Generation")
     with gr.Tabs():
         with gr.Tab("Multi-model text2image"):
             create_multi_model_tab()
+        with gr.Tab("Sana"):
+            create_sana_tab()
 
 demo.launch()
